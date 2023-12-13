@@ -115,6 +115,28 @@ With all services up, access:
 | Grafana UI                       | http://localhost:3000           |                 
 | Spring Cloud Data Flow Dashboard | http://localhost:9393/dashboard |                 
 
+#### Images:
+
+##### Spring Cloud Data Flow Dashboard: Registered Apps
+
+<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/apps.png" alt=""/>
+
+##### Configured Streams
+
+<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/stream-deployed.png" alt=""/>
+
+##### Stream Overview
+
+<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/stream-cfg.png" alt=""/>
+
+##### Stream Apps Config
+
+<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/apps-cfg.png" alt=""/>
+
+##### Stream App Logs
+
+<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/apps-cfg.png" alt=""/>
+
 #### References:
 
 - https://dataflow.spring.io/docs/installation/local/docker/
