@@ -1,4 +1,4 @@
-## Spring Cloud Data Flow Demo with Kafka-Binder
+## Demo of Spring Cloud Data Flow with Kafka-Binder
 
 ![Java](https://img.shields.io/badge/Java-8-green.svg)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-2-green.svg)
