@@ -27,7 +27,7 @@ Generate Stock Instruments -> Update prices for the Stock Insruments -> Confirm 
 #### Instrument Generation Service
 
 - Microservice Type: `Data source`
-- Creates a random stock instrument object with the instrument's name.
+- Creates a random stock instrument object with the instrument's name at a frequency of 1 instrument every second.
 - Produces this stock instrument as a message to a topic on the message broker.
 
 #### Instrument Price Update Service
