@@ -135,7 +135,7 @@ With all services up, access:
 
 ##### Stream App Logs
 
-<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/apps-cfg.png" alt=""/>
+<img src="https://raw.githubusercontent.com/amithkoujalgi/spring-cloud-data-flow-with-kafka-binder-demo/main/imgs/service-logs.png" alt=""/>
 
 #### References:
 
