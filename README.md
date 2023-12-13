@@ -22,6 +22,10 @@ these microservices, establishing a cohesive data workflow/pipeline and executin
 
 ### Overview of Microservices
 
+```
+Generate Stock Instruments -> Update prices for the Stock Insruments -> Confirm the updated prices of the Stock Insruments
+```
+
 #### Instrument Generation Service
 
 - Creates a random stock instrument object with the instrument's name.
