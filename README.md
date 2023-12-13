@@ -16,9 +16,7 @@
 ### Introduction
 
 This demonstration features the seamless integration of Spring Cloud Data Flow with Kafka-Binder, incorporating three
-distinct microservices: the Instrument Generation Service as the data source, the Instrument Price Update Service as the
-data processor, and the Instrument Price Update Confirmation Service as the data sink. The objective is to interconnect
-these microservices, establishing a cohesive data workflow/pipeline and executing the workflow.
+microservices that are interconnected over message broker establishing a cohesive data workflow/pipeline.
 
 ### Overview of Microservices
 
@@ -28,17 +26,20 @@ Generate Stock Instruments -> Update prices for the Stock Insruments -> Confirm 
 
 #### Instrument Generation Service
 
+- Microservice Type: `Data source`
 - Creates a random stock instrument object with the instrument's name.
 - Produces this stock instrument as a message to a topic on the message broker.
 
 #### Instrument Price Update Service
 
+- Microservice Type: `Data processor`
 - Listens to a topic on the message broker to receive instrument names.
 - Updates the prices of stock instruments.
 - Produces the updated stock instruments as a message to another topic on the message broker.
 
 #### Instrument Price Update Confirmation Service
 
+- Microservice Type: `Data sink`
 - Listens to a topic on the message broker to receive stock instruments with updated prices.
 - Writes the price update confirmation to the console (stdout).
 
