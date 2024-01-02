@@ -113,7 +113,8 @@ With all services up, access:
 |----------------------------------|---------------------------------|
 | Kafka UI                         | http://localhost:8080           | 
 | Grafana UI                       | http://localhost:3000           |                 
-| Spring Cloud Data Flow Dashboard | http://localhost:9393/dashboard |                 
+| Spring Cloud Data Flow Dashboard | http://localhost:9393/dashboard |
+| Spring Cloud Data Flow Endpoints | http://localhost:9393/          |
 
 #### Images:
 

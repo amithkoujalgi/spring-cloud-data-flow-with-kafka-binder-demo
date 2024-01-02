@@ -53,13 +53,13 @@ services:
       KAFKA_JMX_HOSTNAME: "${DOCKER_HOST_IP:-127.0.0.1}"
       KAFKA_AUTHORIZER_CLASS_NAME: "kafka.security.authorizer.AclAuthorizer"
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
-#      EXTRA_ARGS:
-#        -javaagent:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.20.0.jar=1234:/usr/share/jmx-exporter/kafka_broker.yml
-#        -javaagent:/usr/share/jmx-exporter/jolokia-jvm-1.7.1.jar=port=1235,host=*
-#    volumes:
-#      - ./config/kafka/jmx_prometheus_javaagent-0.20.0.jar:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.20.0.jar
-#      - ./config/kafka/jolokia-jvm-1.7.2.jar:/usr/share/jmx-exporter/jolokia-jvm-1.7.1.jar
-#      - ./config/kafka/kafka_broker.yml:/usr/share/jmx-exporter/kafka_broker.yml
+    #      EXTRA_ARGS:
+    #        -javaagent:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.20.0.jar=1234:/usr/share/jmx-exporter/kafka_broker.yml
+    #        -javaagent:/usr/share/jmx-exporter/jolokia-jvm-1.7.1.jar=port=1235,host=*
+    #    volumes:
+    #      - ./config/kafka/jmx_prometheus_javaagent-0.20.0.jar:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.20.0.jar
+    #      - ./config/kafka/jolokia-jvm-1.7.2.jar:/usr/share/jmx-exporter/jolokia-jvm-1.7.1.jar
+    #      - ./config/kafka/kafka_broker.yml:/usr/share/jmx-exporter/kafka_broker.yml
     depends_on:
       - zk-svc
 
@@ -125,3 +125,15 @@ services:
         wget 'http://dataflow-server:9393/apps/sink/price-update-confirmation-service' --no-check-certificate --post-data='bootVersion=2&uri=file:///home/cnb/scdf/services/price-update-confirmation-service/target/price-update-confirmation-service-0.0.1-SNAPSHOT.jar';
         wget --method=POST 'http://dataflow-server:9393/streams/definitions?name=instrument-stream&definition=instrument-generation-service%20%7C%20price-update-service%20%7C%20price-update-confirmation-service&description=';
         wget 'http://dataflow-server:9393/streams/deployments/instrument-stream' --header='Accept: application/json' --header='Content-Type: application/json' --post-data='{\"app.*.spring.cloud.stream.kafka.binder.brokers\": \"kafka-svc:19092\",\"app.*.spring.cloud.stream.kafka.binder.zkNodes\": \"zk-svc:2181\"}';"
+
+  grafana:
+    image: springcloud/spring-cloud-dataflow-grafana-prometheus:${DATAFLOW_VERSION:-2.11.2-SNAPSHOT}
+    container_name: grafana
+    ports:
+      - '3000:3000'
+
+  prometheus:
+    image: springcloud/spring-cloud-dataflow-prometheus-local:${DATAFLOW_VERSION:-2.11.2-SNAPSHOT}
+    container_name: prometheus
+    ports:
+      - '9090:9090'
